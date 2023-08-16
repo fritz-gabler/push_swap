@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/16 15:44:01 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/14 17:32:30 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/22 16:17:03 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	
+	char	*f;
+
+	f = (char *) b;
+	while (len--)
+	{
+		*f++ = (char)c;
+	}
+	return (b);
 }

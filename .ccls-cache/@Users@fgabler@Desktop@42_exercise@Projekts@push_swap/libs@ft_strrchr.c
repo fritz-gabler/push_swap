@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/16 15:44:01 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/20 11:03:43 by fgabler           #+#    #+#             */
+/*   Updated: 2023/04/06 19:34:30 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main(int argc, char **argv)
+char	*ft_strrchr(const char *str, int c)
 {
-	
+	int		i;
+	char	find;
+
+	i = 0;
+	i = ft_strlen(str);
+	find = (char) c;
+	while (i >= 0)
+	{
+		if (str[i] == find)
+		{
+			return ((char *) str + i);
+		}
+		i--;
+	}
+	return (NULL);
 }

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/16 15:44:01 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/21 14:25:22 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/24 16:12:12 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main(int argc, char **argv)
+char	*ft_strdup(const char *str1)
 {
-	
+	char			*tmp;
+	unsigned int	i;
+
+	i = 0;
+	tmp = (char *) ft_calloc((ft_strlen(str1) + 1), sizeof (char));
+	if (!tmp)
+		return (0);
+	while (str1[i])
+	{
+		tmp[i] = str1[i];
+		i++;
+	}
+	return (tmp);
 }
