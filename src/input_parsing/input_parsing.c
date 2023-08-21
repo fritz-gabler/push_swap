@@ -6,23 +6,27 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/16 19:51:23 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/21 12:54:35 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static int is_content_digit(int argc, char **argv);
-static void	get_input_as_chars(char ***string_inpu, int argc, char **argv);
+static void	get_input_as_strings(char ***string_inpu, int argc, char **argv);
 
 int input_pasting(int  argc, char **argv)
 {
 	char		**string_input;
 	t_number	*numbers;
+	int			i;
 
+	i = 0;
     if (is_content_digit(argc, argv))
 		return(TRUE);
-	get_input_as_chars(&string_input, argc, argv);
+	get_input_as_strings(&string_input, argc, argv);
+	while (string_input[i])
+		ft_printf("%s\n", string_input[i]);
 	return (0);
 }
 
@@ -46,7 +50,7 @@ static int is_content_digit(int argc, char **argv)
 	return (0);
 }
 
-static void	get_input_as_chars(char ***string_inpu, int argc, char **argv)
+static void	get_input_as_strings(char ***string_inpu, int argc, char **argv)
 {
 	int		count_argv;
 	int		i;
