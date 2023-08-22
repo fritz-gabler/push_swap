@@ -6,7 +6,7 @@ NAME := push_swap
 CC := cc
 HEADERS := -I./include
 CFLAGS ?= -Wall -Werror -Wexra
-LIBS_NAME 
+LIBS_NAME := ./libs/libs.a
 
 ###############################################################################
 ###############################################################################
@@ -30,7 +30,17 @@ all: %(NAME)
 %(NAME): %(OBJS) $(LIBFT_NAME)
 		@echo $(Y)Compiling [%(NAME)]...$(X)
 		@printf $(UP)$(CUT)
-		@$(CC) $(OBJS) 
+		@$(CC) $(OBJS) $(LIBFT_NAME) -o $(NAME)
+		@echo $(GREEN)Finished" '[$(NAME)]...$(RESET)
+
+$(OBJ_DIR)/%.o: %.c
+	@echo $(YELLOW)Compiling [$@]...$(X)
+	@mkdir -p _obj
+	@$(CC) $(CFLAGS) -c $< $(HEADERS) -o $@
+	@printf $(UP)$(RESET)
+
+$(LIBFT_NAME):
+	@$(MAKE) -C $(LIBFT) -B
 
 ###############################################################################
 ###############################################################################
