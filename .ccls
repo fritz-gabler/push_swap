@@ -2,4 +2,4 @@
 -Wextra
 -Werror
 -I./include
--I./libs
+-I./libs/include

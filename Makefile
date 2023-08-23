@@ -4,8 +4,9 @@ NAME := push_swap
 ###############################################################################
 
 CC := cc
-HEADERS := -I./include -I./libs/include
+HEADERS :=-I./include -I./libs/include
 CFLAGS ?= -Wall -Werror -Wextra
+LIBS := ./libs
 LIBS_NAME := ./libs/libs.a
 
 ###############################################################################
@@ -27,44 +28,44 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-%(NAME): %(OBJS) $(LIBFT_NAME)
-		@echo $(Y)Compiling [%(NAME)]...$(X)
-		@printf $(UP)$(CUT)
-		@$(CC) $(OBJS) $(LIBFT_NAME) -o $(NAME)
-		@echo $(GREEN)Finished" '[$(NAME)]...$(RESET)
+$(NAME): $(OBJS) $(LIBS_NAME)
+	@echo $(YELLOW)Compiling [$(NAME)]...$(RESET)
+	@printf $(UP)$(CUT)
+	@$(CC) $(OBJS) $(LIBS_NAME) -o $(NAME)
+	@echo $(GREEN)Finished"  "[$(NAME)]...$(RESET)
 
 $(OBJ_DIR)/%.o: %.c
 	@echo $(YELLOW)Compiling [$@]...$(X)
 	@mkdir -p _obj
 	@$(CC) $(CFLAGS) -c $< $(HEADERS) -o $@
-	@printf $(UP)$(RESET)
+	@printf $(UP)$(CUT)
 
-$(LIBFT_NAME):
-	@$(MAKE) -C $(LIBFT) -B
+$(LIBS_NAME):
+	@$(MAKE) -C $(LIBS) -B
 
 ###############################################################################
 ###############################################################################
 
-claen: 
-	@$(MAKE) -C ./libs claen
-	@printf $(UP) $(CUT)
-	@if [ -d "${OBJ_DIR}" ]; then\
-		echo $(RED)Cleaning" "[$(OBJ_DIR)...$(Restet)
-		rm -rf $(OBJ_DIR); \
-		echo $(GREEN)Cleaned!$(REMOVE); \
+clean:
+	@$(MAKE) -C ./libs clean
+	@printf $(UP)$(CUT)
+	@if [ -d "${OBJ_DIR}" ]; then \
+		echo $(RED)Cleaning"  "[$(OBJ_DIR)]...$(RESET); \
+		rm -rf ${OBJ_DIR}; \
+		echo $(GREEN)Cleaned!$(RESET); \
 	fi
 
 ###############################################################################
 ###############################################################################
 
 fclean: clean
-	@echo $(RED)Celaning executables...
-	@make -C ./libs fclean 
+	@echo $(RED)Cleaning executables...
+	@make -C ./libs fclean
 	@printf $(UP)$(CUT)
-	@if [ -d "$(NAME)" ]; then \
-		echo $(RED)Cleaning" '[$(NAME)]...$(REMOVE); \
-		rm -rf $(NAME); \
-		echo $(GREEN)Cleaned!$(REMOVE); \
+	@if [ -f "$(NAME)" ]; then \
+		echo $(RED)Cleaning"  "[$(NAME)]...$(RESET); \
+		rm -f $(NAME); \
+		echo $(GREEN)Cleaned!$(RESET); \
 	fi
 
 re: fclean all
@@ -72,11 +73,14 @@ re: fclean all
 ###############################################################################
 ###############################################################################
 
-YELLOW := "\033[33m"
+YELLOWELLOW := "\033[33m"
 RED := "\033[31m"
 GREEN := "\033[32m"
 RESET := "\033[0m"
 UP := "\033[A"
+CUT := "\033[K"
 
 ###############################################################################
 ###############################################################################
+
+.PHONY: all clean fclean re bonus
