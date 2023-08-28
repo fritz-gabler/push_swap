@@ -5,17 +5,18 @@ NAME := push_swap
 
 CC := cc
 HEADERS :=-I./include -I./libs/include
-CFLAGS ?= -Wall -Werror -Wextra
+CFLAGS ?= -Wall -Werror -Wextra -g
 LIBS := ./libs
 LIBS_NAME := ./libs/libs.a
 
 ###############################################################################
 ###############################################################################
 
-VPATH := src src/input_parsing
+VPATH := src src/input_parsing src/error_handling
 SRC = push_swap.c
 SRC_PARSING := input_parsing.c
-SRCS := $(SRC) $(SRC_PARSING)
+SRC_ERROR := error_handling.c
+SRCS := $(SRC) $(SRC_PARSING) $(SRC_ERROR)
 
 ###############################################################################
 ###############################################################################
