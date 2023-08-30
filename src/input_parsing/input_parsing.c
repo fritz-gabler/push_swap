@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/30 18:57:17 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/31 00:16:20 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int is_content_digit(int argc, char **argv);
 static void	get_input_as_strings(char ***string_inpu, int argc, char **argv);
 
-int input_pasting(int  argc, char **argv)
+int input_pasting(t_input *imput)
 {
 	char			**string_input;
 	t_dubl_list		*head;
