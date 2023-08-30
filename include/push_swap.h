@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/28 18:35:26 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/30 19:02:08 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,21 @@
 # include "libft.h"
 
 //STRUCT
-typedef struct node
+typedef struct s_input
 {
-	int				index;
-	int				value;
-	struct node		*next;
-}	t_node;
+	char	**argv;
+	int		argc;
+} t_input;
 
 //FUNKTIONS
 
 //INPUT PARSING
 int input_pasting(int  argc, char **argv);
 void	error_handling(void);
+
+//FILL STRUCT
+void	fill_struct_whit_ints(t_input *input, t_dubl_list *head);
+void	fill_struct_with_argv_argc(int argc, char **argv, t_input *input);
+
 
 #endif

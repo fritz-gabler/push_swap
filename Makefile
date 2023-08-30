@@ -12,11 +12,12 @@ LIBS_NAME := ./libs/libs.a
 ###############################################################################
 ###############################################################################
 
-VPATH := src src/input_parsing src/error_handling
+VPATH := src src/input_parsing src/error_handling src/fill_struct
 SRC = push_swap.c
 SRC_PARSING := input_parsing.c
 SRC_ERROR := error_handling.c
-SRCS := $(SRC) $(SRC_PARSING) $(SRC_ERROR)
+SRC_FILL := fill_struct.c
+SRCS := $(SRC) $(SRC_FILL) $(SRC_PARSING) $(SRC_ERROR)
 
 ###############################################################################
 ###############################################################################
