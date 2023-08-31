@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/31 17:12:08 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/31 17:24:40 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ static int is_content_digit(char **string_input)
 {
 	int	j;
 	int	i; 
-	int	row_len;
 
 	i = -1;
-	row_len = (count_doupple_arry_quantity(string_input) + 1);
 	while (++i < count_doupple_arry_quantity(string_input))
 	{
 		j = -1;
