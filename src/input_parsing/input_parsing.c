@@ -6,13 +6,13 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/31 15:55:23 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/31 17:12:08 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int is_content_digit(t_input *input);
+static int is_content_digit(char **string_input);
 static void	get_input_as_strings(char ***string_input, t_input *input);
 
 int input_pasting(t_input *input)
@@ -23,27 +23,32 @@ int input_pasting(t_input *input)
 	head = NULL;
 	if (input->argc < 2)
 		return (error_handling(), FALSE);
-    if (is_content_digit(input))
-		return(error_handling(), FALSE);
 	get_input_as_strings(&string_input, input);
+    if (is_content_digit(string_input))
+		return(error_handling(), FALSE);
 	fill_struct_whit_ints(input, &head);
 	return (0);
 }
 
-static int is_content_digit(t_input *input)
+static int is_content_digit(char **string_input)
 {
 	int	j;
 	int	i; 
+	int	row_len;
 
-	i = 0;
-	while (++i < input->argc)
+	i = -1;
+	row_len = (count_doupple_arry_quantity(string_input) + 1);
+	while (++i < count_doupple_arry_quantity(string_input))
 	{
 		j = -1;
-		while (input->argv[i][++j] != '\0')
+		while (string_input[i][++j] != '\0')
 		{
-			if (input->argv[i][j] == ' ')
+			if (((string_input[i][j] == '+')
+				&& (j == 0))
+				|| ((string_input[i][j] == '-')
+				&& (j == 0)))
 				j++;
-			if (ft_isdigit(input->argv[i][j]) != FALSE)
+			if (ft_isdigit(string_input[i][j]) != FALSE)
 				return (1);
 		}
 	}
