@@ -4,3 +4,6 @@
 [submodule "libs"]
 	path = libs
 	url = https://github.com/fritz-gabler/libs.git
+[submodule "libft"]
+	path = libft
+	url = git@github.com:fritz-gabler/libft.git
