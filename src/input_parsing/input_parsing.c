@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/31 17:24:40 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/08/31 18:49:47 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int is_content_digit(char **string_input);
 static void	get_input_as_strings(char ***string_input, t_input *input);
+static int	check_for_dublicating_numbers(t_dubl_list *lst);
 
 int input_pasting(t_input *input)
 {
@@ -27,6 +28,8 @@ int input_pasting(t_input *input)
     if (is_content_digit(string_input))
 		return(error_handling(), FALSE);
 	fill_struct_whit_ints(input, &head);
+	if (check_for_dublicating_numbers(head))
+		return (error_handling(), FALSE);
 	return (0);
 }
 
@@ -67,9 +70,34 @@ static void	get_input_as_strings(char ***string_input, t_input *input)
 	}
 	*string_input = ft_split(nbr, ' ');
 }
-/*
-static int	check_dunlicating_numbers(t_dubl_list *head)
-{
 
+static int	check_for_dublicating_numbers(t_dubl_list *lst)
+{
+	t_dubl_list *outer_current;
+	t_dubl_list *inner_current;
+	int			inner_guard;
+	int			outer_guard;
+
+	outer_current = lst;
+	outer_guard = 1;
+	while (outer_guard)
+	{
+		inner_current = lst;
+		inner_guard = 1;
+		if (outer_current == inner_current)
+			outer_current = outer_current->next;
+		while (inner_guard)
+		{
+			if (inner_current->content.split.val
+				== outer_current->content.split.val)
+				return (1);
+			if (inner_current == lst)
+				inner_guard = 0;
+			ft_printf("%d\n", inner_current->content.split.val);
+		}
+		outer_current = outer_current->next;
+		if (outer_current == lst)
+			outer_current = 0;
+	}
 	return (0);
-}*/
+}
