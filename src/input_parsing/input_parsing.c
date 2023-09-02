@@ -6,25 +6,23 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/02 09:02:20 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/02 17:07:28 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static int	is_content_digit(char **string_input);
-static void	get_input_as_strings(char ***string_input, t_input *input);
+static void	get_input_as_strings(t_input *input);
 int			is_type_correctly(t_input *input);
 static int	check_for_dublicating_numbers(t_input *input);
 
 int	input_pasting(t_input *input)
 {
-	char			**string_input;
-
 	if (input->argc < 2)
 		return (error_handling(), true);
-	get_input_as_strings(&string_input, input);
-	if (is_content_digit(string_input))
+	get_input_as_strings(input);
+	if (is_content_digit(input->string_input))
 		return (error_handling(), free(input), true);
 	if (check_for_dublicating_numbers(input))
 		return (error_handling(), true);
@@ -56,7 +54,7 @@ static int	is_content_digit(char **string_input)
 	return (0);
 }
 
-static void	get_input_as_strings(char ***string_input, t_input *input)
+static void	get_input_as_strings(t_input *input)
 {
 	int		i;
 	char	*nbr;
@@ -68,7 +66,7 @@ static void	get_input_as_strings(char ***string_input, t_input *input)
 		nbr = ft_strjoin_mod(nbr, input->argv[i]);
 		nbr = ft_strjoin_mod(nbr, " ");
 	}
-	*string_input = ft_split(nbr, ' ');
+	input->string_input = ft_split(nbr, ' ');
 }
 
 static int	check_for_dublicating_numbers(t_input *input)

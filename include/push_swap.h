@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/02 14:43:07 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/02 17:08:30 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_input
 {
 	char	**argv;
 	int		argc;
+	char	**string_input;
 }	t_input;
 
 //FUNKTIONS
