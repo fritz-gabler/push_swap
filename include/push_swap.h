@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/01 16:26:06 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/01 19:18:57 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 //HEADER
 # include "libft.h"
 # include "limits.h"
+# include <stdio.h>
 
 //STRUCT
 typedef struct s_input

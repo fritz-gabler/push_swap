@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/01 17:13:58 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/01 19:44:49 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int is_content_digit(char **string_input);
 static void	get_input_as_strings(char ***string_input, t_input *input);
-int	is_type_correctly(t_input *input, t_dubl_list *lst);
+int	is_type_correctly(t_input *input);
 static int	check_for_dublicating_numbers(t_input *input);
 
 int	input_pasting(t_input *input)
@@ -31,8 +31,8 @@ int	input_pasting(t_input *input)
 	if (check_for_dublicating_numbers(input))
 		return (error_handling(), true);
 	fill_struct_whit_ints(input, &head);
-	if (is_type_correctly(input, head))
-		return (error_handling(), true);
+	if (is_type_correctly(input))
+		return (error_handling(), ft_clstclear(&head), true);
 	return (0);
 }
 
@@ -94,29 +94,18 @@ static int	check_for_dublicating_numbers(t_input *input)
 	return (0);
 }
 
-int	is_type_correctly(t_input *input, t_dubl_list *lst)
+int	is_type_correctly(t_input *input)
 {
 	int				i;
-	int				guard;
-	t_dubl_list		*current;
 
 	i = 0;
-	guard = 1;
-	current = lst;
 	while (++i < input->argc)
 	{
 		if (ft_strlen(input->argv[i]) > 11)
-			return (free(input), ft_clstclear(&lst), true);
-	}
-	while (guard)
-	{
-		ft_printf("%d", current->content.split.val);
-		if ((current->content.split.val > INT_MAX)
-		|| (current->content.split.val < INT_MIN))
-			return (free(input), ft_clstclear(&lst), 1);
-		current = current->next;
-		if (current == lst)
-			guard = 0;
+			return (free(input), true);
+		if (ft_strtol(input->argv[i]) > INT_MAX
+			|| (ft_strtol(input->argv[i]) < INT_MIN))
+			return (free(input), true);
 	}
 	return (false);
 }
