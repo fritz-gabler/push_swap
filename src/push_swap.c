@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/03 18:22:29 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/03 18:32:52 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	main(int argc, char **argv)
 	fill_struct_whit_ints(input, &head);
 	create_stack(&stack, head);
 	print_clst(stack->a);
+	push(stack->a
 	return (0);
 }
