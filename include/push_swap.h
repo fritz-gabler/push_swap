@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/02 17:08:30 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/03 15:38:55 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define RED		"\x01\033[1;31m\x02"
 
 //HEADER
+# include "types.h"
 # include "libft.h"
 # include "limits.h"
 # include <stdio.h>
@@ -38,8 +39,10 @@ void	error_handling(void);
 //FILL STRUCT
 void	fill_struct_whit_ints(t_input *input, t_dubl_list **head);
 void	fill_struct_with_argv_argc(int argc, char **argv, t_input *input);
+void	print_clst(t_dubl_list *head);
 
 //SORTING OPERATIONS
 void	swap(t_dubl_list **stack_a);
+void	push(t_dubl_list **base_stack, t_dubl_list **targed_stack);
 
 #endif
