@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 14:05:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/03 17:48:39 by fgabler          ###   ########.fr       */
+/*   Created: 2023/09/03 17:45:19 by fgabler           #+#    #+#             */
+/*   Updated: 2023/09/03 17:52:51 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#include "push_swap.h"
 
-# include <stdio.h>
-
-# ifndef CUSTOM_CONTENT
-#  define CUSTOM_CONTENT
-
-typedef struct s_content
+void	create_stack(t_stack **stack, t_dubl_list *input)
 {
-    int  idx;
-    int  val;    
-}   t_content;
-# endif
-
-# endif
+	(*stack)->a = input;
+	(*stack)->b = NULL;
+}
