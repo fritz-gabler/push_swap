@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/04 14:53:38 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/04 20:24:41 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	index_input(t_dubl_list **lst);
 //SORTING OPERATIONS
 void	swap(t_dubl_list **stack_a);
 void	push(t_dubl_list **base_stack, t_dubl_list **targed_stack);
+void	rotate(t_dubl_list **stack);
+void	reverse_rotate(t_dubl_list **stack);
 
 //FREE MEM
 void	free_allocated_mem(

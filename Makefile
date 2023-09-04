@@ -20,7 +20,7 @@ SRC_ERROR := error_handling.c
 SRC_FILL := fill_struct.c create_stack.c index_input.c
 SRC_FREE := free_allocated_mem.c
 SRC_PARSING := input_parsing.c is_input_already_sortet.c
-SRC_SORT := swap.c push.c
+SRC_SORT := swap.c push.c rotate.c reverse_rotate.c
 SRCS := $(SRC) $(SRC_CLST) $(SRC_ERROR) $(SRC_FILL) $(SRC_FREE)			\
 		$(SRC_PARSING) $(SRC_SORT)
 
