@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/02 17:07:28 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/04 14:55:47 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	input_pasting(t_input *input)
 		return (error_handling(), true);
 	get_input_as_strings(input);
 	if (is_content_digit(input->string_input))
-		return (error_handling(), free(input), true);
+		return (error_handling(), true);
 	if (check_for_dublicating_numbers(input))
 		return (error_handling(), true);
 	if (is_type_correctly(input))
