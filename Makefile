@@ -13,16 +13,18 @@ LIBS_NAME := ./libs/libs.a
 ###############################################################################
 
 VPATH :=	src src/input_parsing src/error_handling src/fill_struct	\
-			src/sorting_operations src/print_clst src/free_allocated_mem
+			src/sorting_operations src/print src/free_allocated_mem
 SRC = push_swap.c
-SRC_CLST := print_clst.c
+SRC_PRINT:= print_clst.c print_operations.c
 SRC_ERROR := error_handling.c
 SRC_FILL := fill_struct.c create_stack.c index_input.c
 SRC_FREE := free_allocated_mem.c
 SRC_PARSING := input_parsing.c is_input_already_sortet.c
-SRC_SORT := swap.c push.c rotate.c reverse_rotate.c
-SRCS := $(SRC) $(SRC_CLST) $(SRC_ERROR) $(SRC_FILL) $(SRC_FREE)			\
-		$(SRC_PARSING) $(SRC_SORT)
+SRC_SORT := swap.c push.c rotate.c reverse_rotate.c 					\
+			reverse_rotate_rotate.c rotate_rotate.c swap_swap.c			\
+
+SRCS := $(SRC) $(SRC_ERROR) $(SRC_FILL) $(SRC_FREE)			\
+		$(SRC_PARSING) $(SRC_PRINT) $(SRC_SORT)
 
 ###############################################################################
 ###############################################################################

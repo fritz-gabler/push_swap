@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 18:35:14 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 14:02:46 by fgabler          ###   ########.fr       */
+/*   Created: 2023/09/05 11:32:27 by fgabler           #+#    #+#             */
+/*   Updated: 2023/09/05 14:02:25 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_dubl_list **base_stack, t_dubl_list **targed_stack, int operation)
+void	swap_swap(t_dubl_list **stack_a, t_dubl_list **stack_b)
 {
-	t_dubl_list	*tail;
-	t_dubl_list	*second;
-	t_dubl_list	*save_head;
-
-	save_head = *base_stack;
-	tail = save_head->prev;
-	second = save_head->next;
-	second->prev = tail;
-	tail->next = save_head->next;
-	*base_stack = second;
-	ft_clstadd_front(targed_stack, save_head);
-	print_operations(operation);
+	swap(stack_a, SS);
+	swap(stack_b, NON);
 }
