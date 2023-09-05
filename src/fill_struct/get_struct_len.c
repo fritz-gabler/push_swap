@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   get_struct_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 14:05:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 17:02:54 by fgabler          ###   ########.fr       */
+/*   Created: 2023/09/05 17:07:17 by fgabler           #+#    #+#             */
+/*   Updated: 2023/09/05 17:08:27 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#include "push_swap.h"
 
-# include <stdio.h>
+void	get_struct_len(int *struct_len)
 
-# ifndef CUSTOM_CONTENT
-#  define CUSTOM_CONTENT
-
-typedef struct s_content
-{
-    int	idx;
-    int	val;
-}   t_content;
-# endif
-
-# endif

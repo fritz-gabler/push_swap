@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:16:55 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/04 14:35:28 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/05 16:58:38 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	index_input(t_dubl_list **lst)
 
 	current = *lst;
 	guard = true;
-	index = 1;
+	index = 0;
 	set_every_index_to_zero(lst);
 	while (guard)
 	{

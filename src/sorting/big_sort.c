@@ -1,28 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 14:05:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 17:02:54 by fgabler          ###   ########.fr       */
+/*   Created: 2023/09/05 16:51:24 by fgabler           #+#    #+#             */
+/*   Updated: 2023/09/05 16:51:44 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#include "push_swap.h"
 
-# include <stdio.h>
-
-# ifndef CUSTOM_CONTENT
-#  define CUSTOM_CONTENT
-
-typedef struct s_content
-{
-    int	idx;
-    int	val;
-}   t_content;
-# endif
-
-# endif
