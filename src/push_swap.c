@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 14:18:15 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:50:39 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int	main(int argc, char **argv)
 		return (free_allocated_mem(&input, &strct, &stack), true);
 	create_stack(&stack, strct);
 	big_sort(stack);
-	return (0);
+	ft_printf("\n\n");
+	print_clst(stack->a);
+	return (free_allocated_mem(&input, &strct, &stack), false);
 }
