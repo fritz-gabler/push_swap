@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:14:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 14:50:39 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 17:26:14 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_input			*input;
 	t_dubl_list		*strct;
 	t_stack			*stack;
-	int				struct_len;
+	int				list_len;
 
 	strct = NULL;
 	input = malloc(sizeof(t_input));
@@ -27,11 +27,14 @@ int	main(int argc, char **argv)
 		return (free_allocated_mem(&input, &strct, &stack), true);
 	fill_struct_whit_ints(input, &strct);
 	index_input(&strct);
-	get_list_len(&struct_len, strct);
+	get_list_len(&list_len, strct);
 	if (is_input_already_sortet(&strct))
 		return (free_allocated_mem(&input, &strct, &stack), true);
 	create_stack(&stack, strct);
-	big_sort(stack);
+	if (list_len > 5)
+		big_sort(stack);
+	if (list_len <= 3)
+		sort_three_or_less_elements(stack);
 	ft_printf("\n\n");
 	print_clst(stack->a);
 	return (free_allocated_mem(&input, &strct, &stack), false);

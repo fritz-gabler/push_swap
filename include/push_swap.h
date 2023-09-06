@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 14:08:39 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 17:24:35 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void	free_allocated_mem(
 
 //SORT
 void	big_sort(t_stack *stack);
+void	sort_three_or_less_elements(t_stack *stack);
 
 #endif
