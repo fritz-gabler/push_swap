@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 18:20:47 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 21:58:41 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 23:12:45 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_ten_or_less_elements(t_stack *stack)
 	int		possition;
 	
 	get_list_len(&list_len, stack->a);
-	while (list_len > 3)
+	while (list_len > 2)
 	{
 		get_smallest_number(stack->a, &smallest_number);
 		get_possition_in_list(stack->a, smallest_number, &possition);
@@ -35,7 +35,8 @@ void	sort_ten_or_less_elements(t_stack *stack)
 			rotate(&stack->a, RA);
 		get_list_len(&list_len, stack->a);
 	}
-	sort_three_or_less_elements(stack);
+	if (is_input_already_sortet(&stack->a) == false)
+		rotate(&stack->a, RA);
 	while (stack->b != NULL)
 		push(&stack->b, &stack->a, PA);
 }
