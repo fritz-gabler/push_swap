@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 22:11:56 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 00:09:07 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define PB		004
 # define RA		005
 # define RB		006
-# define RR		007 
+# define RR		007
 # define RRA	012
 # define RRB	011
 # define RRR	010
@@ -53,7 +53,7 @@ typedef struct s_input
 //FUNKTIONS
 
 //INPUT PARSING
-int		input_pasting(t_input *input);
+int		input_parsing(t_input *input);
 void	error_handling(void);
 int		is_input_already_sortet(t_dubl_list **lst);
 

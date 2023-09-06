@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 15:01:14 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:07:53 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	get_input_as_strings(t_input *input);
 int			is_type_correctly(t_input *input);
 static int	check_for_dublicating_numbers(t_input *input);
 
-int	input_pasting(t_input *input)
+int	input_parsing(t_input *input)
 {
 	if (input->argc < 2)
 		return (error_handling(), true);
@@ -48,7 +48,7 @@ static int	is_content_digit(char **string_input)
 				&& (j == 0)))
 				j++;
 			if (ft_isdigit(string_input[i][j]) != true)
-				return (free_dubble_array(string_input), 1);
+				return (1);
 		}
 	}
 	return (0);
@@ -67,7 +67,9 @@ static void	get_input_as_strings(t_input *input)
 		nbr = ft_strjoin_mod(nbr, " ");
 	}
 	input->string_input = ft_split(nbr, ' ');
+	free(nbr);
 }
+
 
 static int	check_for_dublicating_numbers(t_input *input)
 {
