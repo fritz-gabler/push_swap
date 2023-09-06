@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 14:02:37 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:03:33 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 # define PB		004
 # define RA		005
 # define RB		006
-# define RR		007
-# define RRA	012
+# define RR		007 # define RRA	012
 # define RRB	011
 # define RRR	010
 # define NON	013
@@ -62,6 +61,7 @@ void	fill_struct_whit_ints(t_input *input, t_dubl_list **head);
 void	fill_struct_with_argv_argc(int argc, char **argv, t_input *input);
 void	create_stack(t_stack **stack, t_dubl_list *input);
 void	index_input(t_dubl_list **lst);
+void	get_list_len(int *struct_len, t_dubl_list *strct);
 
 //PRINT
 void	print_clst(t_dubl_list *head);
@@ -80,5 +80,8 @@ void	swap_swap(t_dubl_list **stack_a, t_dubl_list **stack_b);
 //FREE MEM
 void	free_allocated_mem(
 			t_input **input, t_dubl_list **strct, t_stack **stack);
+
+//SORT
+void	big_sort(t_stack *stack);
 
 #endif
