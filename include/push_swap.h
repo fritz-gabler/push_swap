@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 23:03:33 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:08:39 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 # define PB		004
 # define RA		005
 # define RB		006
-# define RR		007 # define RRA	012
+# define RR		007 
+# define RRA	012
 # define RRB	011
 # define RRR	010
 # define NON	013

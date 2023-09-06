@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:51:24 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 23:17:34 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:12:05 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	big_sort(t_stack *stack)
 	get_list_len(&list_len, stack->a);
 	//ft_printf("%d\n", list_len);
 	bit_size = 0;
-	while (list_len >> bit_size)
+	while ((list_len) >> bit_size)
 		bit_size++;
 	while (++i < bit_size)
 	{
@@ -33,11 +33,11 @@ void	big_sort(t_stack *stack)
 			if (((stack->a->content.split.idx >> i) & 1) == false)
 				push(&stack->a, &stack->b, PB);
 			else
-			{
 				rotate(&stack->a, RA);
-			}
 		}
-		while (stack->b->content.split.idx != 0)
+		while (stack->b != NULL)
+		{
 			push(&stack->b, &stack->a, PA);
+		}
 	}
 }

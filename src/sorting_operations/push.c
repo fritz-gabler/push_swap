@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 18:35:14 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 14:02:46 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:18:07 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@ void	push(t_dubl_list **base_stack, t_dubl_list **targed_stack, int operation)
 	t_dubl_list	*tail;
 	t_dubl_list	*second;
 	t_dubl_list	*save_head;
+	int			base_list_len;
 
+	get_list_len(&base_list_len, *base_stack);
 	save_head = *base_stack;
-	tail = save_head->prev;
-	second = save_head->next;
-	second->prev = tail;
-	tail->next = save_head->next;
-	*base_stack = second;
-	ft_clstadd_front(targed_stack, save_head);
+	if (base_list_len > 1)
+	{
+		tail = save_head->prev;
+		second = save_head->next;
+		second->prev = tail;
+		tail->next = save_head->next;
+		*base_stack = second;
+		ft_clstadd_front(targed_stack, save_head);
+	}
+	else
+	{
+		ft_clstadd_front(targed_stack, save_head);
+		*base_stack = NULL;
+	}
 	print_operations(operation);
 }
