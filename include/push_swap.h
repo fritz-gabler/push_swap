@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:02 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/07 00:09:07 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:51:59 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 //COLORS
 # define RED		"\x01\033[1;31m\x02"
+# define RESET		"\033[0m"
 
 //DEFINE PRINT OPERATIONS
 # define SA		000
@@ -70,8 +71,8 @@ void	print_operations(int operation);
 
 //SORTING OPERATIONS
 void	swap(t_dubl_list **stack, int operation);
-void	push(t_dubl_list **base_stack
-		, t_dubl_list **targed_stack, int operation);
+void	push(t_dubl_list **base_stack,
+			t_dubl_list **targed_stack, int operation);
 void	rotate(t_dubl_list **stack, int operation);
 void	reverse_rotate(t_dubl_list **stack, int operation);
 void	rotate_rotate(t_dubl_list **stack_a, t_dubl_list **stack_b);

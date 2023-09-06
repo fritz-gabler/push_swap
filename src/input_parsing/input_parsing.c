@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:17:25 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/07 01:07:53 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:36:34 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ static void	get_input_as_strings(t_input *input)
 	free(nbr);
 }
 
-
 static int	check_for_dublicating_numbers(t_input *input)
 {
 	int		i;
@@ -83,7 +82,7 @@ static int	check_for_dublicating_numbers(t_input *input)
 		while (input->string_input[j] != NULL)
 		{
 			if (ft_atoi(input->string_input[i])
-					== ft_atoi(input->string_input[j]))
+				== ft_atoi(input->string_input[j]))
 				return (true);
 			j++;
 		}
@@ -95,7 +94,7 @@ int	is_type_correctly(t_input *input)
 {
 	int				i;
 
-	i =  -1;
+	i = -1;
 	while (input->string_input[++i] != NULL)
 	{
 		if (ft_strlen(input->string_input[i]) > 11)

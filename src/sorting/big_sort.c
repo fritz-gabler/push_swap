@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:51:24 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 14:12:05 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:41:47 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	big_sort(t_stack *stack)
 {
-	int i;
-	int j;
-	int list_len;
-	int bit_size;
+	int	i;
+	int	j;
+	int	list_len;
+	int	bit_size;
 
-	i= -1;
+	i = -1;
 	get_list_len(&list_len, stack->a);
-	//ft_printf("%d\n", list_len);
 	bit_size = 0;
 	while ((list_len) >> bit_size)
 		bit_size++;

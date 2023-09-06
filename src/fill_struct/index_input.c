@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:16:55 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/05 18:28:26 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:38:17 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	index_smalest_number(t_dubl_list **lst, int index);
 
 void	index_input(t_dubl_list **lst)
 {
-	t_dubl_list *current;
+	t_dubl_list	*current;
 	int			guard;
 	int			index;
 
@@ -37,12 +37,11 @@ void	index_input(t_dubl_list **lst)
 	}
 	current = *lst;
 	guard = true;
-
 }
 
 static void	set_every_index_to_gegative_one(t_dubl_list **lst)
 {
-	t_dubl_list *current;
+	t_dubl_list	*current;
 	int			guard;
 
 	current = *lst;

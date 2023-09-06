@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 10:26:26 by fgabler           #+#    #+#             */
-/*   Updated: 2023/08/28 10:39:07 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:52:36 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	error_handling(void)
 {
-	ft_printf("%sError\n", RED);
+	ft_printf("%sError%s\n", RED, RESET);
 }

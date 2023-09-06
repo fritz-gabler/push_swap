@@ -6,13 +6,14 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 18:35:14 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 14:18:07 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:45:45 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_dubl_list **base_stack, t_dubl_list **targed_stack, int operation)
+void	push(
+		t_dubl_list **base_stack, t_dubl_list **targed_stack, int operation)
 {
 	t_dubl_list	*tail;
 	t_dubl_list	*second;

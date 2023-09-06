@@ -6,7 +6,7 @@
 /*   By: fgabler <mail@student.42heilbronn.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:20:03 by fgabler           #+#    #+#             */
-/*   Updated: 2023/09/06 15:18:32 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/09/07 01:40:45 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_input_already_sortet(t_dubl_list **lst)
 	i = 0;
 	while (guard)
 	{
-		if(current->content.split.idx != i)
+		if (current->content.split.idx != i)
 			return (false);
 		current = current->next;
 		if (current == *lst)
