@@ -8,6 +8,7 @@ HEADERS :=-I./include -I./libs/include
 CFLAGS ?= -Wall -Werror -Wextra -g
 LIBS := ./libs
 LIBS_NAME := ./libs/libs.a
+LIBS_ADD := git pull --recurse-submodules
 
 ###############################################################################
 ###############################################################################
@@ -54,6 +55,7 @@ $(OBJ_DIR)/%.o: %.c
 	@printf $(UP)$(CUT)
 
 $(LIBS_NAME):
+	@$(LIBS_ADD)
 	@$(MAKE) -C $(LIBS) -B
 
 ###############################################################################
