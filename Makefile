@@ -43,6 +43,7 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS_NAME)
+	@$(LIBS_ADD)
 	@echo $(YELLOW)Compiling [$(NAME)]...$(RESET)
 	@printf $(UP)$(CUT)
 	@$(CC) $(OBJS) $(LIBS_NAME) -o $(NAME)
@@ -55,7 +56,6 @@ $(OBJ_DIR)/%.o: %.c
 	@printf $(UP)$(CUT)
 
 $(LIBS_NAME):
-	@$(LIBS_ADD)
 	@$(MAKE) -C $(LIBS) -B
 
 ###############################################################################
