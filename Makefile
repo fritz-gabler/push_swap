@@ -8,7 +8,6 @@ HEADERS :=-I./include -I./libs/include
 CFLAGS ?= -Wall -Werror -Wextra -g
 LIBS := ./libs
 LIBS_NAME := ./libs/libs.a
-LIBS_ADD := git pull --recurse-submodules
 
 ###############################################################################
 ###############################################################################
@@ -43,7 +42,6 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS_NAME)
-	@$(LIBS_ADD)
 	@echo $(YELLOW)Compiling [$(NAME)]...$(RESET)
 	@printf $(UP)$(CUT)
 	@$(CC) $(OBJS) $(LIBS_NAME) -o $(NAME)
