@@ -3,7 +3,4 @@
 	url = https://github.com/fritz-gabler/push_swap.git
 [submodule "libs"]
 	path = libs
-	url = git@github.com:fritz-gabler/libs.git
-[submodule "libft"]
-	path = libft
-	url = git@github.com:fritz-gabler/libft.git
+	url = https://github.com/fritz-gabler/push_swap.git
